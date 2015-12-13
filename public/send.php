@@ -13,8 +13,8 @@ $email = $_REQUEST['email'];
 
 # Make the call to the client.
 $result = $mgClient->sendMessage($domain, array(
-    'from'    => 'PHPMAIL <no-reply@mrpaulphan.com>',
+    'from'    => $name . '<' . $email . '>',
     'to'      => 'Paul <paul@mrpaulphan.com>',
     'subject' => 'Hello',
-    'text'    => 'Testing some Mailgun awesomness! $name' . $name 
+    'text'    => 'Testing some Mailgun awesomness! $name' 
 ));
