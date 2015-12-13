@@ -25,7 +25,7 @@ $result = $mgClient->sendMessage($domain, array(
     'from'    => $name . '<' . $email . '>',
     'to'      => 'Paul <paul@mrpaulphan.com>',
     'subject' => 'Hello',
-    'text'    => 'Testing some Mailgun awesomness! $name' 
+    'text'    => 'Testing some Mailgun awesomness!' 
 ));
 
 } else {  

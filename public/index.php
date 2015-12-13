@@ -5,17 +5,21 @@
 </head>
 <body>
     <form action="send.php" method="post" class="ajax">
-        <div>
+    <div class="error"></div>
+        <div class="form-row form-row-name">
 	        <label for="name">Name</label>
 	        <input type="text" name="name" id="name">
+            <p class="form-row-name_error"></p>
+
         </div>
 
-        <div>
-	        <label for="email">email</label>
+        <div class="form-row form-row-email">
+	        <label for="email">Email</label>
 	        <input type="email" name="email" id="email">
+            <p class="form-row-email_error"></p>
         </div>
 
-        <div>
+        <div class="form-row">
 			<input type="submit" value="Send">
 		</div>
 

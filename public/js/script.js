@@ -13,7 +13,6 @@ $(document).ready(function() {
                 value = that.val();
             // Append to data
             data[name] = value;
-            console.log(data);
         });
 
         $.ajax({
@@ -21,10 +20,31 @@ $(document).ready(function() {
             type: type,
             data: data,
             success: function(response) {
-                console.log(response);
+
+            	// If input values are empty
+                if ($.trim(data.name && data.email) == "") {
+
+                    if (data.name == "") {
+                        $('.form-row-name_error').html('<p class="error">Name can not be blank</p>');
+                    } else {
+                        $('.form-row-name_error').html('');
+                    }
+
+                    if (data.email == "") {
+                        $('.form-row-email_error').html('<p class="error">Please do not leave this field blank</p>');
+                    } else {
+                        $('.form-row-email_error').html('');
+                    }
+                } else { // Form is completed with no errors
+                    $('.form-row').hide();
+
+                    $('.error').html('Thank You for your Submission');
+
+                };
+
             },
             error: function(response) {
-                console.log(response, 'erro');
+                console.log('There was an ajax Error');
             }
         });
 
